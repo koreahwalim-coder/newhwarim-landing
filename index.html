@@ -72,7 +72,7 @@
     }
 
     .contact-box {
-      min-width: 260px;
+      min-width: 280px;
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 18px;
@@ -102,13 +102,46 @@
     }
 
     .chip-link {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: #ffffff;
       color: #0f4c81;
       padding: 9px 13px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 800;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .chip-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.16);
+    }
+
+    .chip-link.kakao {
+      background: #fee500;
+      color: #111827;
+    }
+
+    .chip-link.naver {
+      background: #03c75a;
+      color: #ffffff;
+    }
+
+    .chip-link.blog {
+      background: #00c73c;
+      color: #ffffff;
+    }
+
+    .chip-link.youtube {
+      background: #ff0000;
+      color: #ffffff;
+    }
+
+    .chip-icon {
+      font-size: 15px;
+      line-height: 1;
     }
 
     .section-card {
@@ -309,13 +342,35 @@
     }
 
     .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: #ffffff;
       color: #0f172a;
       padding: 12px 18px;
       border-radius: 999px;
       font-size: 15px;
       font-weight: 900;
-      display: inline-block;
+    }
+
+    .cta-btn.kakao {
+      background: #fee500;
+      color: #111827;
+    }
+
+    .cta-btn.naver {
+      background: #03c75a;
+      color: #ffffff;
+    }
+
+    .cta-btn.youtube {
+      background: #ff0000;
+      color: #ffffff;
+    }
+
+    .cta-btn.blog {
+      background: #00c73c;
+      color: #ffffff;
     }
 
     .footer {
@@ -385,6 +440,10 @@
       .recommend-price {
         font-size: 22px;
       }
+
+      .contact-box {
+        min-width: 100%;
+      }
     }
   </style>
 </head>
@@ -408,10 +467,18 @@
           <div class="contact-number">010-9407-9372</div>
 
           <div class="contact-links">
-            <a class="chip-link" href="http://pf.kakao.com/xoYJMX/chat" target="_blank" rel="noopener">카카오채널</a>
-            <a class="chip-link" href="https://talk.naver.com/ct/wj26c8k#nafullscree" target="_blank" rel="noopener">네이버톡톡</a>
-            <a class="chip-link" href="https://blog.naver.com/hahahoho9372" target="_blank" rel="noopener">블로그</a>
-            <a class="chip-link" href="https://www.youtube.com/@이지희-x9z3q" target="_blank" rel="noopener">유튜브</a>
+            <a class="chip-link kakao" href="http://pf.kakao.com/_xoYJMX/chat" target="_blank" rel="noopener">
+              <span class="chip-icon">💬</span><span>카카오톡</span>
+            </a>
+            <a class="chip-link naver" href="https://talk.naver.com/ct/wj26c8k#nafullscreen" target="_blank" rel="noopener">
+              <span class="chip-icon">🟢</span><span>네이버톡톡</span>
+            </a>
+            <a class="chip-link blog" href="https://blog.naver.com/hahahoho9372" target="_blank" rel="noopener">
+              <span class="chip-icon">📝</span><span>블로그</span>
+            </a>
+            <a class="chip-link youtube" href="https://www.youtube.com/@이지희-x9z3q" target="_blank" rel="noopener">
+              <span class="chip-icon">▶</span><span>유튜브</span>
+            </a>
           </div>
         </div>
       </div>
@@ -593,12 +660,24 @@
         뉴화림부동산이 현장 실매물 기준으로 정확하게 안내해드립니다.
       </p>
       <div class="cta-buttons">
-        <a class="cta-btn" href="tel:0515553777">051-555-3777 전화하기</a>
-        <a class="cta-btn" href="tel:01094079372">010-9407-9372 전화하기</a>
-        <a class="cta-btn" href="http://pf.kakao.com/xoYJMX/chat" target="_blank" rel="noopener">카카오채널 상담</a>
-        <a class="cta-btn" href="https://talk.naver.com/ct/wj26c8k#nafullscree" target="_blank" rel="noopener">네이버톡톡 상담</a>
-        <a class="cta-btn" href="https://blog.naver.com/hahahoho9372" target="_blank" rel="noopener">블로그 바로가기</a>
-        <a class="cta-btn" href="https://www.youtube.com/@이지희-x9z3q" target="_blank" rel="noopener">유튜브 바로가기</a>
+        <a class="cta-btn" href="tel:0515553777">
+          <span>📞</span><span>051-555-3777 전화하기</span>
+        </a>
+        <a class="cta-btn" href="tel:01094079372">
+          <span>📱</span><span>010-9407-9372 전화하기</span>
+        </a>
+        <a class="cta-btn kakao" href="http://pf.kakao.com/_xoYJMX/chat" target="_blank" rel="noopener">
+          <span>💬</span><span>카카오톡 채팅</span>
+        </a>
+        <a class="cta-btn naver" href="https://talk.naver.com/ct/wj26c8k#nafullscreen" target="_blank" rel="noopener">
+          <span>🟢</span><span>네이버톡톡 상담</span>
+        </a>
+        <a class="cta-btn blog" href="https://blog.naver.com/hahahoho9372" target="_blank" rel="noopener">
+          <span>📝</span><span>블로그 바로가기</span>
+        </a>
+        <a class="cta-btn youtube" href="https://www.youtube.com/@이지희-x9z3q" target="_blank" rel="noopener">
+          <span>▶</span><span>유튜브 바로가기</span>
+        </a>
       </div>
     </section>
 
