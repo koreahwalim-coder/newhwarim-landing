@@ -154,7 +154,6 @@
       letter-spacing: -1px;
     }
 
-    /* 기존과 다른 느낌의 색상 */
     .sale-title {
       background: linear-gradient(90deg, #ffd76a 0%, #ffbf3f 100%);
       color: #111827;
@@ -220,14 +219,32 @@
     }
 
     .recommend-thumb {
-      height: 190px;
+      position: relative;
+      height: 220px;
+      overflow: hidden;
       background: linear-gradient(135deg, #dfe9f3 0%, #f8fbff 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #64748b;
-      font-size: 15px;
-      font-weight: 700;
+    }
+
+    .recommend-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .recommend-thumb-label {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.78);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      backdrop-filter: blur(3px);
     }
 
     .recommend-body {
@@ -329,6 +346,10 @@
       .table-title {
         font-size: 22px;
       }
+
+      .recommend-thumb {
+        height: 240px;
+      }
     }
 
     @media (max-width: 520px) {
@@ -351,6 +372,18 @@
       th, td {
         padding: 12px 8px;
         font-size: 14px;
+      }
+
+      .recommend-thumb {
+        height: 220px;
+      }
+
+      .recommend-title {
+        font-size: 19px;
+      }
+
+      .recommend-price {
+        font-size: 22px;
       }
     }
   </style>
@@ -390,7 +423,6 @@
       </p>
 
       <div class="grid-2">
-        <!-- 매매 실거래가 -->
         <div class="table-wrap">
           <div class="table-title sale-title">매매 실거래가</div>
           <table>
@@ -441,7 +473,6 @@
           </table>
         </div>
 
-        <!-- 전월세 실거래가 -->
         <div class="table-wrap">
           <div class="table-title rent-title">전월세 실거래가</div>
           <table>
@@ -503,52 +534,55 @@
     <section class="section-card">
       <h2 class="section-title">추천매물</h2>
       <p class="section-desc">
-        아래 영역은 기존 페이지에서 사용하던 추천매물 카드 구성을 그대로 넣으면 됩니다.
-        지금은 바로 사용할 수 있게 예시 카드 형태로 넣어두었습니다.
+        최근 문의가 많은 대표 매물을 이미지와 함께 정리했습니다.
       </p>
 
       <div class="recommend-grid">
         <div class="recommend-card">
-          <div class="recommend-thumb">추천매물 이미지 영역</div>
+          <div class="recommend-thumb">
+            <img src="living.jpg" alt="래미안포레스티지 거실 사진" />
+            <div class="recommend-thumb-label">채광 좋은 거실</div>
+          </div>
           <div class="recommend-body">
             <div class="recommend-title">래미안포레스티지 35평형</div>
             <div class="recommend-price">매매 9억대</div>
             <div class="recommend-meta">남동향 · 중층 · 실거주 추천</div>
             <div class="recommend-desc">
-              채광과 개방감이 좋고 선호도 높은 타입 위주로 구성한 추천 매물입니다.
+              넓은 거실과 안정감 있는 구조감이 돋보이는 타입으로, 채광과 개방감을 중요하게 보시는 분들께 잘 맞는 추천 매물입니다.
             </div>
           </div>
         </div>
 
         <div class="recommend-card">
-          <div class="recommend-thumb">추천매물 이미지 영역</div>
+          <div class="recommend-thumb">
+            <img src="view.jpg" alt="래미안포레스티지 금정산 조망 사진" />
+            <div class="recommend-thumb-label">금정산 조망</div>
+          </div>
           <div class="recommend-body">
             <div class="recommend-title">래미안포레스티지 38평형</div>
             <div class="recommend-price">매매 9억 후반대</div>
             <div class="recommend-meta">개방감 우수 · 로얄동 선호</div>
             <div class="recommend-desc">
-              실거주 만족도가 높은 평형대로, 조망과 내부 컨디션에 따라 문의가 빠른 편입니다.
+              시원한 조망과 쾌적한 분위기가 강점인 평형대로, 내부 컨디션과 뷰를 함께 중시하시는 분들께 문의가 많은 대표 매물입니다.
             </div>
           </div>
         </div>
 
         <div class="recommend-card">
-          <div class="recommend-thumb">추천매물 이미지 영역</div>
+          <div class="recommend-thumb">
+            <img src="kitchen.jpg" alt="래미안포레스티지 주방 사진" />
+            <div class="recommend-thumb-label">고급 주방 공간</div>
+          </div>
           <div class="recommend-body">
             <div class="recommend-title">래미안포레스티지 30평형</div>
             <div class="recommend-price">전세 / 매매 상담</div>
             <div class="recommend-meta">희소 매물 · 빠른 상담 권장</div>
             <div class="recommend-desc">
-              수요가 꾸준한 평형대로, 조건 맞는 매물이 나오면 빠르게 비교해보시는 것이 좋습니다.
+              주방과 생활 공간의 완성도가 좋고 실사용 만족도가 높은 타입으로, 조건 맞는 매물이 나오면 빠르게 움직이시는 분들이 많은 편입니다.
             </div>
           </div>
         </div>
       </div>
-
-      <!--
-        기존 추천매물 코드를 그대로 쓰려면
-        위 recommend-grid 전체를 기존 코드의 추천매물 카드 블록으로 교체하면 됩니다.
-      -->
     </section>
 
     <section class="cta-area">
